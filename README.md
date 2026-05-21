@@ -155,6 +155,13 @@ Do not scan systems without permission.
 
 ---
 
-## 👨‍💻 Author
+
 
 Built with Python + Tkinter + Nmap
+
+
+## 👨‍💻 Author 
+        Rishikesh Borah
+Linkedin - www.linkedin.com/in/rishikeshborah
+portfolio - rishidev.online
+tryhackme - https://tryhackme.com/p/Rishi007r

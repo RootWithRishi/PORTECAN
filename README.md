@@ -1,123 +1,160 @@
-🟢 RISHI SHADOW PORT SCANNER
+# 🔍 Advanced Port Scanner GUI
 
-A Python-based advanced port scanner with a hacker-style terminal interface.
-Designed for learning cybersecurity, networking, and ethical hacking.
+A beginner-friendly **Python + Tkinter + Nmap** based advanced port scanner with multiple scanning modes and a graphical interface.
 
-🚀 Features
-⚡ Aggressive Port Scan (1–1000)
-🔍 Version Detection Scan
-📊 Normal Scan (basic ports)
-🎯 Custom Port Scan (user-defined)
-🧩 Script Scan (run your own scripts)
-🌐 Know Your IP (public + local)
-💻 Hacker-style green terminal UI
-⛔ Ctrl + C safe exit
-⚙️ Multi-threaded fast scanning
-🧠 Use Cases
-Learning port scanning concepts
-Practicing ethical hacking
-Network troubleshooting
-Cybersecurity projects
-⚠️ Disclaimer
+Designed for learning:
 
-This tool is made for educational purposes only.
-Do NOT scan any system without proper authorization.
+* Networking
+* Ethical Hacking
+* Cybersecurity
+* Port Enumeration
+* Python GUI Development
 
-📦 Requirements
-Python 3.x
-Internet connection (for IP detection)
-Built-in Libraries Used:
-socket
-threading
-os
-time
-sys
-urllib
+---
 
-(No external libraries required ✅)
+## 📸 Features
 
-🛠️ Installation
-1. Clone the repository
-git clone https://github.com/your-username/port-scanner.git
-cd port-scanner
-2. Run the tool
-python portscanner.py
-📋 Usage
+✔ Basic TCP Port Scan
+✔ Common Ports Scan
+✔ Full TCP Port Scan
+✔ Service Version Detection
+✔ OS Detection
+✔ Aggressive Scan
+✔ Fast Scan
+✔ TCP SYN Scan
+✔ UDP Scan
+✔ Custom Nmap Command Execution
+✔ Automatic Default Scan (1–1024)
+✔ Separate Popup Result Window
+✔ GUI-Based Interface
+✔ Beginner Friendly
 
-After running the script, you will see:
+---
 
-1. Aggressive Scan
-2. Version Scan
-3. Normal Scan
-4. Custom Port Scan
-5. Script Scan
-6. Know Your IP
-Example:
-Select option → 1
-Enter target IP → 192.168.1.1
-🔥 Scan Modes Explained
-1. Aggressive Scan
+## 🛠 Requirements
 
-Scans ports from 1 to 1000 quickly.
+Install dependencies:
 
-2. Version Scan
+```bash
+sudo apt update
+sudo apt install python3 python3-tk nmap -y
+```
 
-Attempts to detect service banners.
+Install Python packages:
 
-3. Normal Scan
+```bash
+pip install tkinter
+```
 
-Basic scan for common ports (1–200).
+---
 
-4. Custom Port Scan
+## 🚀 Run Project
 
-User defines ports:
+Clone repository:
 
-80,443,21
-5. Script Scan
+```bash
+git clone https://github.com/YOUR_USERNAME/advanced-port-scanner.git
+```
 
-Run your own Python script:
+Move into project:
 
-python your_script.py <target_ip>
-6. Know Your IP
+```bash
+cd advanced-port-scanner
+```
 
-Displays:
+Run:
 
-Public IP 🌐
-Local IP 🖥️
-⛔ Exit Tool
+```bash
+python3 port_scanner_gui.py
+```
 
-Press:
+---
 
-CTRL + C
+## 🖥 Scan Modes
 
-✔ Safely stops scanning
-✔ No crash
+| Scan Type         | Description              |
+| ----------------- | ------------------------ |
+| Basic TCP Scan    | Scan selected port range |
+| Common Ports Scan | Scan popular ports       |
+| Full TCP Scan     | Scan all TCP ports       |
+| Service Version   | Detect running services  |
+| OS Detection      | Detect operating system  |
+| Aggressive Scan   | Advanced discovery       |
+| Fast Scan         | Quick scan               |
+| TCP SYN Scan      | TCP SYN discovery        |
+| UDP Scan          | UDP enumeration          |
+| Custom Nmap       | User-defined command     |
 
-🖥️ Example Output
-[+] Aggressive Scan Running...
+---
 
-[OPEN] Port 22
-[OPEN] Port 80
-[OPEN] Port 443
+## 📚 Example Commands
 
-[✓] Scan completed in 3.45 sec
-🔮 Future Improvements
-Save results (JSON / CSV)
-OS detection
-Advanced service detection
-GUI version (Tkinter dashboard)
-Stealth scan (SYN scan using Scapy)
-Kali Linux installer
-👨‍💻 Author
+Service Scan:
 
-Rishikesh Borah
-Aspiring Cybersecurity Professional 🔐
-BCA Student | Python & Networking Enthusiast
+```bash
+nmap -sV 192.168.1.1
+```
 
-⭐ Support
+OS Detection:
 
-If you like this project:
+```bash
+nmap -O 192.168.1.1
+```
 
-⭐ Star the repo
-🍴 Fork it
-🧠 Improve it
+Aggressive Scan:
+
+```bash
+nmap -A 192.168.1.1
+```
+
+Custom Port Range:
+
+```bash
+nmap -p 1-5000 192.168.1.1
+```
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+advanced-port-scanner/
+│
+├── port_scanner_gui.py
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## 🎯 Why This Project
+
+This project helps beginners understand:
+
+* How port scanning works
+* Network service discovery
+* Enumeration concepts
+* Nmap integration
+* Python socket programming
+* GUI application development
+
+Instead of memorizing commands, users can learn visually.
+
+---
+
+## ⚠ Disclaimer
+
+This project is intended for:
+
+✔ Personal Labs
+✔ Local Networks
+✔ CTF Practice
+✔ Authorized Testing
+
+Do not scan systems without permission.
+
+---
+
+## 👨‍💻 Author
+
+Built with Python + Tkinter + Nmap

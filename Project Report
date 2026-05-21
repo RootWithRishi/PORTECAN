@@ -1,0 +1,158 @@
+Code Explanation
+import socket
+
+Used for basic TCP port scanning. It tries to connect to a target IP and port to check whether the port is open.
+
+import subprocess
+
+Used to run Nmap commands from inside the Python GUI.
+
+import shlex
+
+Used to safely split a custom Nmap command into arguments. This is safer than running raw shell commands.
+
+import tkinter as tk
+
+Used to build the graphical user interface.
+
+from tkinter import messagebox, ttk
+
+Used for popup alerts and dropdown scan options.
+
+Main Scanning Logic
+basic_tcp_scan
+
+This function scans a selected port range.
+
+It works by:
+
+Creating a socket.
+Trying to connect to each port.
+If connection succeeds, the port is open.
+If connection fails, the port is closed or filtered.
+
+Why it is useful:
+
+Simple
+Beginner friendly
+Helps understand how port scanning works internally
+common_ports_scan
+
+This scans only popular ports like:
+
+21, 22, 80, 443, 3306, 8080
+
+Why useful:
+
+Faster than full scan
+Good for quick recon
+Beginner friendly
+run_command
+
+This function runs custom Nmap commands.
+
+Example:
+
+nmap -sV 192.168.1.1
+
+Why useful:
+
+Lets advanced users use real Nmap options
+Supports service scan, OS detection, aggressive scan, UDP scan, etc.
+Makes the GUI flexible
+
+It only allows commands starting with:
+
+nmap
+
+This makes it safer than allowing any system command.
+
+GUI Logic
+PortScannerApp
+
+This class creates the full desktop app.
+
+It contains:
+
+IP input box
+Start port box
+End port box
+Scan type dropdown
+Custom command field
+Start scan button
+Result popup window
+get_target
+
+Checks whether the user entered an IP or hostname.
+
+get_ports
+
+If no ports are entered, it uses default:
+
+1-1024
+
+Why useful:
+
+Beginners can scan without knowing port ranges
+Prevents empty input errors
+show_result_popup
+
+Shows scan result in a separate window.
+
+Why useful:
+
+Main window stays clean
+Results are easy to read
+Looks more professional
+start_scan
+
+This decides which scan type to run.
+
+Example:
+
+Basic TCP Scan → Python socket scan
+Common Ports Scan → predefined common ports
+Nmap scans → runs Nmap command
+Custom Nmap Command → user-defined Nmap command
+Why This Tool Is Reliable For Beginners
+
+This tool is reliable for learning because it combines:
+
+Python + Socket Programming + Tkinter GUI + Nmap
+
+It teaches both:
+
+how scanning works internally
+how professional tools like Nmap are used
+
+It is good for:
+
+labs
+CTFs
+home network testing
+cybersecurity practice
+BCA/college projects
+portfolio projects
+Real-World Reliability
+
+In real-world security work, professionals usually use Nmap for accurate scanning.
+
+Your tool becomes useful because:
+
+Basic scan teaches the concept
+Nmap integration gives real-world scanning power
+GUI makes it beginner friendly
+Custom command option allows advanced usage
+
+So this project is not just a toy tool. It is a learning wrapper around real scanning techniques.
+
+Important Limitation
+
+This tool should be used only on:
+
+your own network
+authorized lab machines
+CTF targets
+TryHackMe / HackTheBox machines
+
+Do not scan public systems without permission.
